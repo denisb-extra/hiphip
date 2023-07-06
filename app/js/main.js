@@ -52,6 +52,13 @@ $(document).ready(function ($) {
         thankyouPage = getFieldValueByName(inputs, "thankyou-page");
         if(thankyouPage) window.location = thankyouPage;
     }, false );
+
+    if($(window).width() <= 950) {
+        $(".icon.search").on("click", function(e){
+            e.preventDefault();
+            $(".search-field").toggleClass("open");
+        });
+    }
 });
 
 function getFieldValueByName(ar, name){

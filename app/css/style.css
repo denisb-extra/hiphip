@@ -378,6 +378,40 @@ header {
           color: #ED682C; }
       header .search-field .dgwt-wcas-search-form svg {
         max-height: 20px; }
+    header .search-field form.is-form-style {
+      max-width: 300px; }
+      header .search-field form.is-form-style input.is-search-input {
+        height: 40px !important;
+        border-radius: 20px !important;
+        margin-right: 0 !important;
+        margin-left: auto !important;
+        border: none !important;
+        background: #EFF4FE !important;
+        font-family: 'assistant-regular';
+        font-size: 16px !important;
+        color: #ED682C; }
+        header .search-field form.is-form-style input.is-search-input::-webkit-input-placeholder {
+          /* WebKit browsers */
+          color: #ED682C; }
+        header .search-field form.is-form-style input.is-search-input:-moz-placeholder {
+          /* Mozilla Firefox 4 to 18 */
+          color: #ED682C; }
+        header .search-field form.is-form-style input.is-search-input::-moz-placeholder {
+          /* Mozilla Firefox 19+ */
+          color: #ED682C; }
+        header .search-field form.is-form-style input.is-search-input:-ms-input-placeholder {
+          /* Internet Explorer 10+ */
+          color: #ED682C; }
+      header .search-field form.is-form-style label {
+        width: 100% !important; }
+      header .search-field form.is-form-style button.is-search-submit, header .search-field form.is-form-style .is-search-icon {
+        background: transparent !important;
+        border: none !important; }
+      header .search-field form.is-form-style button.is-search-submit {
+        position: absolute;
+        left: 5px;
+        top: 50%;
+        transform: translateY(-50%); }
   header .logo-wrapper {
     position: relative;
     font-size: 0;
@@ -425,6 +459,9 @@ header {
           background: #EF8694; }
         header .part-icons .icons .icon.search {
           display: none; }
+          header .part-icons .icons .icon.search img.close {
+            max-height: 13px;
+            display: none; }
         header .part-icons .icons .icon .num {
           position: absolute;
           top: -7px;
@@ -599,7 +636,20 @@ header {
     header .header-bottom {
       display: none; }
     header .search-field {
-      display: none; }
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      transition: 0.5s;
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(-20px); }
+      header .search-field form.is-form-style {
+        max-width: 100%; }
+      header .search-field.open {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0px); }
     header .part-icons .button {
       display: none; }
     header .part-icons .icons .icon {
@@ -608,6 +658,14 @@ header {
       margin: 0 5px; }
       header .part-icons .icons .icon.search {
         display: flex; }
+        header .part-icons .icons .icon.search img.close {
+          display: none; }
+        header .part-icons .icons .icon.search img.main {
+          display: block; }
+        header .part-icons .icons .icon.search.open img.close {
+          display: block; }
+        header .part-icons .icons .icon.search.open img.main {
+          display: none; }
       header .part-icons .icons .icon .num {
         position: absolute;
         top: -7px;

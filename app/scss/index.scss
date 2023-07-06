@@ -141,6 +141,36 @@ header {
                 max-height: 20px;
             }
         }
+
+        form.is-form-style  {
+            max-width: 300px;
+            input.is-search-input {
+                height: 40px !important;
+                border-radius: 20px !important;
+                
+                margin-right: 0 !important;
+                margin-left: auto !important;
+                border: none !important;
+                background: #EFF4FE !important;
+                @include f-r;   
+                font-size: 16px !important;
+                color: #ED682C;
+                @include placeholder-color(#ED682C);
+            }
+            label {
+                width: 100% !important;
+            }
+            button.is-search-submit, .is-search-icon {
+                background: transparent !important;
+                border: none !important;
+            }
+            button.is-search-submit {
+                position: absolute;
+                left: 5px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
     }
 
     .logo-wrapper {
@@ -196,6 +226,10 @@ header {
 
                 &.search {
                     display: none;
+                    img.close {
+                        max-height: 13px;
+                        display: none;
+                    }
                 }
    
 
@@ -466,7 +500,24 @@ header {
             display: none;
         }
         .search-field {
-            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            form.is-form-style {
+                max-width: 100%;
+            }
+
+            transition: 0.5s;
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(-20px);
+
+            &.open {
+                visibility: visible;
+                opacity: 1;
+                transform: translateY(0px);
+            }
         }
         .part-icons {
             .button {
@@ -479,6 +530,22 @@ header {
                     margin: 0 5px;
                     &.search {
                         display: flex;
+
+                        img.close {
+                            display: none;
+                        }
+                        img.main {
+                            display: block;
+                        }
+                        &.open {
+                            img.close {
+                                display: block;
+                            }
+                            img.main {
+                                display: none;
+                            }
+                        }
+
                     }
                     .num {
                         position: absolute;
